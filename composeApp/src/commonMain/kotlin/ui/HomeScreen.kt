@@ -6,25 +6,19 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
 import domain.Movie
 import utils.Dimens.TMDb_140_dp
 import utils.Dimens.TMDb_8_dp
-import viewmodel.TMDbViewModel
 
 @Composable
 fun HomeScreen(
-    viewModel: TMDbViewModel = viewModel { TMDbViewModel() },
     onClick: (Movie) -> Unit
 ) {
-    val state by viewModel.uiState.collectAsState()
-
-    if (state.movies.isNotEmpty()) {
-        HomeScreen(state.movies, onClick)
-    }
+        HomeScreen(listOf(
+            Movie(
+                1, "Hellooooo","http://image.tmdb.org/t/p/w780/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg"
+            )), onClick)
 }
 
 @Composable
