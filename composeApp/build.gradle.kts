@@ -47,9 +47,7 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-            implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization)
-            implementation(libs.viewmodel)
             implementation(libs.navigation)
 
             implementation(libs.coil.compose)
